@@ -52,6 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="Migrations\202309070529159_Initial.cs" />
+    <Compile Include="Migrations\202309070529159_Initial.designer.cs">
+      <DependentUpon>202309070529159_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepository.cs" />
   </ItemGroup>
@@ -64,6 +69,11 @@
       <Project>{1ED7BF03-B159-4595-85C9-3D965088C2A8}</Project>
       <Name>HyperMarket.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202309070529159_Initial.resx">
+      <DependentUpon>202309070529159_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

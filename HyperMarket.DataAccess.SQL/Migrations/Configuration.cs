@@ -1,18 +1,18 @@
-﻿namespace HyperMarket.UI.Migrations
+﻿namespace HyperMarket.DataAccess.SQL.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<HyperMarket.UI.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<HyperMarket.DataAccess.SQL.DataContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(HyperMarket.UI.Models.ApplicationDbContext context)
+        protected override void Seed(HyperMarket.DataAccess.SQL.DataContext context)
         {
             //  This method will be called after migrating to the latest version.
 
