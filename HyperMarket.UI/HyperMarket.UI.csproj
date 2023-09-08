@@ -322,6 +322,18 @@
       <Project>{1ED7BF03-B159-4595-85C9-3D965088C2A8}</Project>
       <Name>HyperMarket.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HyperMarket.DataAccess.Inmemory\HyperMarket.DataAccess.Inmemory.csproj">
+      <Project>{bd639185-bba5-4c58-92bb-bb064a3cdc04}</Project>
+      <Name>HyperMarket.DataAccess.Inmemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyperMarket.DataAccess.SQL\HyperMarket.DataAccess.SQL.csproj">
+      <Project>{c80744ad-97f7-4867-82df-e6829bacd9aa}</Project>
+      <Name>HyperMarket.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyperMarket.Services\HyperMarket.Services.csproj">
+      <Project>{185b9fd4-9f74-46bc-a7a1-f8095daec091}</Project>
+      <Name>HyperMarket.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

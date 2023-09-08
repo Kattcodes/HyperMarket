@@ -1,5 +1,8 @@
+using HyperMarket.Core.Contracts;
+using HyperMarket.Core.Models;
+using HyperMarket.DataAccess.SQL;
 using System;
-
+using HyperMarket.DataAccess.Inmemory;
 using Unity;
 
 namespace HyperMarket.UI
@@ -9,7 +12,8 @@ namespace HyperMarket.UI
     /// </summary>
     public static class UnityConfig
     {
-        #region Unity Container
+
+      #region Unity Container
         private static Lazy<IUnityContainer> container =
           new Lazy<IUnityContainer>(() =>
           {
@@ -42,6 +46,8 @@ namespace HyperMarket.UI
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
+            container.RegisterType<IRepository<Product>, SQLRepository<Product>>();
+            container.RegisterType<IRepository<ProductCategory>, SQLRepository<ProductCategory>>();
         }
     }
 }
