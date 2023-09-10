@@ -3,6 +3,7 @@ using HyperMarket.Core.Models;
 using HyperMarket.Core.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -34,14 +35,20 @@ namespace HyperMarket.UI.Controllers
             return View(viewModel);
         }
         [HttpPost]
-        public ActionResult Create(Product product) 
+        public ActionResult Create(Product product , HttpPostedFileBase file) 
         {
             if (!ModelState.IsValid)
             {
                 return View(product);
             }
-            else
+            else 
             {
+                if(file != null) 
+                {
+                    product.Image = product.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages" + product.Image));
+                }
+
                 context.Insert(product);
                 context.commit();
                 return RedirectToAction("Index");
@@ -61,7 +68,7 @@ namespace HyperMarket.UI.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Edit(Product product , string Id) 
+        public ActionResult Edit(Product product , string Id, HttpPostedFileBase file) 
         {
             Product p = context.Find(Id);
             if(p == null)
@@ -72,6 +79,12 @@ namespace HyperMarket.UI.Controllers
                 {
                     return View(product);
                 }
+                if (file != null)
+                {
+                    product.Image = product.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//" + product.Image));
+                }
+
                 p.Category = product.Category;
                 p.Description = product.Description;
                 p.Name = product.Name;
