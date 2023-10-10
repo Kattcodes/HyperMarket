@@ -56,6 +56,14 @@
     <Compile Include="Migrations\202309070529159_Initial.designer.cs">
       <DependentUpon>202309070529159_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309110631427_Cart.cs" />
+    <Compile Include="Migrations\202309110631427_Cart.designer.cs">
+      <DependentUpon>202309110631427_Cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310102016229_CustomerMi.cs" />
+    <Compile Include="Migrations\202310102016229_CustomerMi.designer.cs">
+      <DependentUpon>202310102016229_CustomerMi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepository.cs" />
@@ -73,6 +81,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202309070529159_Initial.resx">
       <DependentUpon>202309070529159_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309110631427_Cart.resx">
+      <DependentUpon>202309110631427_Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310102016229_CustomerMi.resx">
+      <DependentUpon>202310102016229_CustomerMi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

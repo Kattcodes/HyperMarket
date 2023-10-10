@@ -47,6 +47,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
@@ -89,6 +90,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Mocks\MockContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -99,6 +101,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HyperMarket.Core\HyperMarket.Core.csproj">
+      <Project>{1ED7BF03-B159-4595-85C9-3D965088C2A8}</Project>
+      <Name>HyperMarket.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\HyperMarket.UI\HyperMarket.UI.csproj">
       <Project>{C54F038D-6FCA-4907-8FEB-F08F80FD28AC}</Project>
       <Name>HyperMarket.UI</Name>
